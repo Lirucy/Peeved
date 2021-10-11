@@ -1,0 +1,20 @@
+{
+  "name": "Peeved",
+  "description": "A top pet peeves blog application",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lirucy/Peeved.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lirucy/Peeved/issues"
+  },
+  "homepage": "https://github.com/Lirucy/Peeved#readme"
+}
