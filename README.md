@@ -25,6 +25,7 @@ _List all MVP goals for your application. These are independent of the MVPs requ
 - Hamburger menu
 - Add dropdown/pop-up login on hover/click etc.
 - Additional styling, animations
+- Posts Search
 
 ## Database Schemas
 _Please provide a sample of how you intend to build your models. A Schema object for each of your models is ideal._
@@ -73,13 +74,14 @@ _Use the table below to create your team's timeframes. Given the project is abou
 | Style each component | H | 3hrs| 0hrs |
 | Nav bar Styling | H | 3hrs| 0hrs |
 | Responsivness | H | 3hrs| 0hrs |
-| Hamburger menue | H | 3hrs| 0hrs |
+| Hamburger menu | H | 3hrs| 0hrs |
 | Animations | H | 3hrs| 0hrs |
 | Like button | H | 3hrs| 0hrs |
 | Dropdown for Login | H | 3hrs| 0hrs |
 | Bottom section/footer | H | 3hrs| 0hrs |
 | Add commenting | H | 3hrs| 0hrs |
-| Total | H | 6hrs| 5hrs | 
+| Posts Search | H | 3hrs| 0hrs |
+| Total | H | 0hrs| 0hrs | 
 
 
 ## SWOT Analysis
