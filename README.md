@@ -45,8 +45,20 @@ postSchema
   }
 ```
 
-## Whimsical
+## MERN Chart
 <img src="./MERN-chart.jpg" alt="MERN chart"/>
+
+## Wireframes
+<img src="./home.jpg" alt="wireframe">
+<img src="./register.jpg" alt="wireframe">
+<img src="./logged-in-page.jpg" alt="wireframe">
+<img src="./new-post.jpg" alt="wireframe">
+<img src="./edit.jpg" alt="wireframe">
+<img src="./home.rsp.jpg" alt="wireframe">
+<img src="./register.rsp.jpg" alt="wireframe">
+<img src="./logged-in-page.rsp.jpg" alt="wireframe">
+<img src="./new-post.rsp.jpg" alt="wireframe">
+<img src="./edit.rsp.jpg" alt="wireframe">
 
 ## Component Hierarchy
 <img src="./component-hierarchy.png" alt="component hierarchy" />
