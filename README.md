@@ -7,7 +7,8 @@ A top pet peeves blog application
 - Abdi Osman
 
 ## Group Expectations
-_Link your document here_
+<img src="./group-expectations.png" alt="Group expectations" />
+<img src="./group-expectations2.png" alt="Group expectations" />
 
 
 ## MVP Goals
@@ -45,10 +46,10 @@ postSchema
 ```
 
 ## Whimsical
-_Please post your application's full stack diagram here as an IMAGE, not as a link._
+<img src="./MERN-chart.jpg" alt="MERN chart"/>
 
 ## Component Hierarchy
-_For each screen you intend on showing, provide a wireframe for both desktop and mobile._
+<img src="./component-hierarchy.png" alt="component hierarchy" />
 
 ## Timeframes
 
