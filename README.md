@@ -11,7 +11,7 @@ _Link your document here_
 
 
 ## MVP Goals
-_List all MVP goals for your application. These are independent of the MVPs required for Project 3._
+
 - Create MERN application and deploy via Heroku and Netlify
 - Application will have full front-end and back-end CRUD functionality
 - Application will have collections for both User and Posts
@@ -28,20 +28,30 @@ _List all MVP goals for your application. These are independent of the MVPs requ
 - Posts Search
 
 ## Database Schemas
-_Please provide a sample of how you intend to build your models. A Schema object for each of your models is ideal._
+```
+userSchema
+  {
+    username: { type: String, required: true, unique: true },
+    email: { type: String, required: true },
+    password_digest: { type: String, required: true }
+  }
 
-```json
-
+postSchema
+  {
+    title: { type: String, required: true },
+    content: { type: String, required: true },
+    userId: { type: Schema.Types.ObjectId, ref: "User" }
+  }
 ```
 
 ## Whimsical
 _Please post your application's full stack diagram here as an IMAGE, not as a link._
 
-## Wireframes
+## Component Hierarchy
 _For each screen you intend on showing, provide a wireframe for both desktop and mobile._
 
 ## Timeframes
-_Use the table below to create your team's timeframes. Given the project is about a week long, you can add between 40 hours * group members (i.e. 120 hours for 3 group members)._
+
 
 | Component | Priority | Estimated Time | Actual Time| 
 | --- | :---: |  :---: | :---: | 
@@ -81,16 +91,16 @@ _Use the table below to create your team's timeframes. Given the project is abou
 | Bottom section/footer | H | 3hrs| 0hrs |
 | Add commenting | H | 3hrs| 0hrs |
 | Posts Search | H | 3hrs| 0hrs |
-| Total | H | 0hrs| 0hrs | 
+| Total | H | 107.5hrs| 0hrs | 
 
 
 ## SWOT Analysis
 
 _<strong>Rick</strong>_
-- S: 
-- W:
-- O:
-- T:
+- S: Back-end, front-end structure, routing
+- W: Front-end components rendering, handling
+- O: To learn from my teammates based on their strengths
+- T: Not sticking to group expectations/team communication
 
 _<strong>John_</strong>
 - S:
