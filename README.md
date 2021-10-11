@@ -103,10 +103,11 @@ _<strong>Rick</strong>_
 - T: Not sticking to group expectations/team communication
 
 _<strong>John_</strong>
-- S:
-- W:
-- O:
-- T: 
+- S: I am confident in my Front-end knowledge
+- W: Authorization component of the app may be a struggle for me
+
+- O: To learn and improve my weakness in some of my coding skill
+- T: Time management and not able to meet expectation of others
 
 _<strong>Abdi</strong>_
 - S: I think getting the database setup will go smoothly as i am confident in that.
