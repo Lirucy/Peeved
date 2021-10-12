@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 import { getAllPosts } from "../services";
 import Post from "../components/Post";
@@ -18,6 +19,7 @@ const Home = () => {
                 ))}
             </div>
         </section>
+
 const Home = () => {
     return (
         <div>
