@@ -1,23 +1,40 @@
-import logo from './logo.svg';
+import { Route, Switch } from "react-router-dom";
+// import Nav from "./components/Nav";
+// import Post from "./components/Post";
+// import Home from "./screens/Home";
+// import Register from "./screens/Register";
+// import NewPost from "./screens/NewPost";
+// import EditPost from "./screens/EditPost";
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <Nav /> */}
+      <Switch>
+        <main>
+          <Route exact path="/">
+            <h3>This is Home!</h3>
+            {/* <Home /> */}
+          </Route>
+          <Route path="/register">
+          <h3>This is Register!</h3>
+            {/* <Register /> */}
+          </Route>
+          <Route path="/login">
+          <h3>This is Login!</h3>
+            {/* <Login /> */}
+          </Route>
+          <Route path="/new-post">
+          <h3>This is New Post!</h3>
+            {/* <NewPost /> */}
+          </Route>
+          <Route path="/edit-post/:id">
+          <h3>This is Edit/update post!</h3>
+            {/* <EditPost /> */}
+          </Route>
+        </main>
+      </Switch>
     </div>
   );
 }
