@@ -7,6 +7,7 @@ const Nav = ({ user }) => {
         <>
           <Link to="/">Home</Link>
           <Link to="/new-post">New Post</Link>
+                    
         </>
       ) : (
         <>
