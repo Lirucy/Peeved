@@ -4,6 +4,7 @@ import { useState } from "react";
 // import Post from "./components/Post";
 // import Home from "./screens/Home";
 import Register from "./screens/Register";
+import Login from "./screens/Login";
 // import NewPost from "./screens/NewPost";
 // import EditPost from "./screens/EditPost";
 import './App.css';
@@ -25,7 +26,7 @@ function App() {
           </Route>
           <Route path="/login">
           <h3>This is Login!</h3>
-            {/* <Login /> */}
+            <Login setUser={setUser}/> 
           </Route>
           <Route path="/new-post">
           <h3>This is New Post!</h3>
