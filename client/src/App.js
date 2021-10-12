@@ -1,5 +1,6 @@
 import { Route, Switch } from "react-router-dom";
-// import Nav from "./components/Nav";
+import { useState } from 'react'
+import Nav from "./components/Nav";
 // import Post from "./components/Post";
 // import Home from "./screens/Home";
 // import Register from "./screens/Register";
@@ -8,9 +9,10 @@ import { Route, Switch } from "react-router-dom";
 import './App.css';
 
 function App() {
+  const [user, setUser] = useState(null);
   return (
     <div className="App">
-      {/* <Nav /> */}
+      <Nav  user = {user}/>
       <Switch>
         <main>
           <Route exact path="/">
