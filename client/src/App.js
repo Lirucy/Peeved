@@ -1,13 +1,15 @@
 import { Route, Switch } from "react-router-dom";
+import { useState } from "react";
 // import Nav from "./components/Nav";
 // import Post from "./components/Post";
 // import Home from "./screens/Home";
-// import Register from "./screens/Register";
+import Register from "./screens/Register";
 // import NewPost from "./screens/NewPost";
 // import EditPost from "./screens/EditPost";
 import './App.css';
 
 function App() {
+  const [user, setUser] = useState(null)
   return (
     <div className="App">
       {/* <Nav /> */}
@@ -19,7 +21,7 @@ function App() {
           </Route>
           <Route path="/register">
           <h3>This is Register!</h3>
-            {/* <Register /> */}
+             <Register setUser= {setUser}/> 
           </Route>
           <Route path="/login">
           <h3>This is Login!</h3>
