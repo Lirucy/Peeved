@@ -1,4 +1,8 @@
 import { Route, Switch } from "react-router-dom";
+import { userState } from "react";
+// import Nav from "./components/Nav";
+import Home from "./screens/Home";
+// import Register from "./screens/Register";
 import { useState } from "react";
 // import Nav from "./components/Nav";
 // import Post from "./components/Post";
@@ -17,8 +21,7 @@ function App() {
       <Switch>
         <main>
           <Route exact path="/">
-            <h3>This is Home!</h3>
-            {/* <Home /> */}
+            <Home />
           </Route>
           <Route path="/register">
           <h3>This is Register!</h3>
