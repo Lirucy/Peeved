@@ -46,8 +46,9 @@ const destroyPost = async (req, res) => {
                 return res.status(500).json({ error: e.message })
             }
             if (!post) {
-                return res.status(404).json({ error: `Post, id: ${id} successfully deleted`})
+                return res.status(404).json({ error: `Post, id: ${id} not found`})
             }
+            res.status(200).json({ message: `Post, id: ${id} successfully deleted!`})
          })
     } catch (e) {
         res.status(500).json({ error: e.message });
