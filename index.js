@@ -18,5 +18,5 @@ app.get("/", (req, res) =>
 res.status(200).json({ message: "All up in the root route!" })
 );
 
-app.listen(PORT, () => console.log(`All up in yo buisness on port ${PORT}!`));
+app.listen(PORT, () => console.log(`All up in yo business on port ${PORT}!`));
 

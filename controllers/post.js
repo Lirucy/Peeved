@@ -20,7 +20,43 @@ const newPost = async (req, res) => {
     }
 }
 
+const updatePost = async (req, res) => {
+    try {
+        const { id } = req.params;
+
+        Post.findByIdAndUpdate(id, req.body, { new: true }, (e, post) => {
+            if (e) {
+                return res.status(500).json({ error: e.message });
+            }
+            if (!post) {
+                return res.status(404).json({ error: `Post, id: ${id} not found` });
+            }
+            res.status(200).json(post);
+        })
+    } catch (e) {
+        res.status(500).json({ message: e.message });
+    }
+}
+
+const destroyPost = async (req, res) => {
+    try {
+        const { id } = req.params;
+        Post.findByIdAndDelete(id, (e, post) => {
+            if (e) {
+                return res.status(500).json({ error: e.message })
+            }
+            if (!post) {
+                return res.status(404).json({ error: `Post, id: ${id} successfully deleted`})
+            }
+         })
+    } catch (e) {
+        res.status(500).json({ error: e.message });
+    }
+}
+
 module.exports = {
     getAllPosts,
     newPost,
+    updatePost,
+    destroyPost
 }
