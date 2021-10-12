@@ -1,3 +1,4 @@
+
 import { Link } from 'react-router-dom';
 
 const Nav = ({ user }) => {
@@ -7,9 +8,6 @@ const Nav = ({ user }) => {
             <Link to='/register'>Register</Link>
             <Link to='/login'>Login</Link>
             <Link to='/new-post'>New Post</Link>
-        
-        </nav>
-    );
-};
+
 
 export default Nav;

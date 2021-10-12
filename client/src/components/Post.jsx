@@ -1,9 +1,11 @@
-const Post = () => {
+
+const Post = (props) => {
+    const {title, content} = props.post;
     return (
-        <div>
-            <h3>Posts go here!</h3>
-        </div>
-    );
-};
+        <article>
+            <h3>{title}</h3>
+            <h4>{content}</h4>
+        </article>
+
 
 export default Post;
