@@ -1,13 +1,21 @@
-
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const Nav = ({ user }) => {
-    return (
-        <nav>
-            <Link to='/'>Home</Link>
-            <Link to='/register'>Register</Link>
-            <Link to='/login'>Login</Link>
-            <Link to='/new-post'>New Post</Link>
-
+  return (
+    <nav>
+      {user ? (
+        <>
+          <Link to="/">Home</Link>
+          <Link to="/new-post">New Post</Link>
+        </>
+      ) : (
+        <>
+          <Link to="/login">Login</Link>
+          <Link to="/register">Register</Link>
+        </>
+      )}
+    </nav>
+  );
+};
 
 export default Nav;

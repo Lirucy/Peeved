@@ -1,9 +1,3 @@
-const Login = () => {
-    return (
-        <div>
-            <h3>This is login!</h3>
-        </div>
-
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { loginUser } from "../services";
