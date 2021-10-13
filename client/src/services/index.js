@@ -26,7 +26,7 @@ export const loginUser = async (userInfo) => {
 const buildHeaders = (token) => {
   return {
     headers: {
-      Authorizaion: `Bearer ${token}`, 
+      Authorization: `Bearer ${token}`, 
     }
   };
 };
