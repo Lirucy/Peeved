@@ -16,7 +16,7 @@ const Login = (props) => {
             }
             const user = await loginUser(userInfo)
             props.setUser(user)
-            history.push("/")
+            history.push("/user-profile")
         } catch (error) {
             console.error(error.message)
         }

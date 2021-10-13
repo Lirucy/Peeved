@@ -11,7 +11,7 @@ const getAllPosts = async (req,res) => {
 
 const newPost = async (req, res) => {
     try {
-        const post = new Post(req.body);
+        const post = new Post({...req.body, userId:res.locals.user._id});
 
         await post.save();
         res.status(201).json(post);
@@ -23,7 +23,6 @@ const newPost = async (req, res) => {
 const updatePost = async (req, res) => {
     try {
         const { id } = req.params;
-
         Post.findByIdAndUpdate(id, req.body, { new: true }, (e, post) => {
             if (e) {
                 return res.status(500).json({ error: e.message });
