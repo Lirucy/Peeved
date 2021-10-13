@@ -1,4 +1,5 @@
 const Post = require("../models/post");
+const User = require("../models/user");
 
 const getAllPosts = async (req,res) => {
     try {
@@ -22,8 +23,8 @@ const newPost = async (req, res) => {
 
 const updatePost = async (req, res) => {
     try {
+       if( id === User._id )
         const { id } = req.params;
-
         Post.findByIdAndUpdate(id, req.body, { new: true }, (e, post) => {
             if (e) {
                 return res.status(500).json({ error: e.message });
@@ -37,6 +38,7 @@ const updatePost = async (req, res) => {
         res.status(500).json({ message: e.message });
     }
 }
+
 
 const destroyPost = async (req, res) => {
     try {
