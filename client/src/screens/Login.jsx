@@ -21,7 +21,6 @@ const Login = (props) => {
             console.error(error.message)
         }
     }
-
     return (
         <section>
             <h3>Login to your account!</h3>

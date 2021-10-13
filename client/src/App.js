@@ -4,7 +4,7 @@ import Nav from "./components/Nav";
 import Home from "./screens/Home";
 import Register from "./screens/Register";
 import Login from "./screens/Login";
-// import NewPost from "./screens/NewPost";
+import NewPost from "./screens/NewPost";
 // import EditPost from "./screens/EditPost";
 import './App.css';
 
@@ -27,8 +27,7 @@ function App() {
             <Login setUser={setUser}/> 
           </Route>
           <Route path="/new-post">
-          <h3>This is New Post!</h3>
-            {/* <NewPost /> */}
+            <NewPost />
           </Route>
           <Route path="/edit-post/:id">
           <h3>This is Edit/update post!</h3>

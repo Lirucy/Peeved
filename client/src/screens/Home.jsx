@@ -12,7 +12,7 @@ const Home = () => {
     }, []);
     return (
         <section>
-            <h3>Checkout Top Pet Peeves!</h3>
+            <h3>Checkout our Top Pet Peeves!</h3>
             <div>
                 {posts.map((post) => (
                     <Post key={post._id} post={post} />
