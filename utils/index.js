@@ -22,17 +22,17 @@ const hashPassword = (password) => hashSync(password, SALT);
 const restrict = async (req, res, next) => {
     try {
         if(!req.headers.authorization) {
-            throw new Error("Failed to provide authorization token");
+            throw new Error("Failed to provide authorization token!");
         }
         const token = req.headers.authorization.split(" ")[1];
         const { username } = verify(token, SECRET);
         if (username) {
             const [user] = await User.find({ username });
             res.locals.user = user;
+            next();
         } else {
             throw new Error("User not authorized")
         }
-        next();
     } catch (e) {
         return res.status(401).json({ message: e.message });
     }
