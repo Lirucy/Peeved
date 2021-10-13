@@ -1,16 +1,22 @@
 import { Route, Switch } from "react-router-dom";
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Nav from "./components/Nav";
 import Home from "./screens/Home";
 import Register from "./screens/Register";
 import Login from "./screens/Login";
 import NewPost from "./screens/NewPost";
+import UserProfile from "./screens/UserProfile";
+import { verifyUser } from "./services"; 
 // import EditPost from "./screens/EditPost";
 import './App.css';
 
 function App() {
 
   const [user, setUser] = useState(null)
+
+  useEffect (() => {
+    verifyUser().then((verifiedUser) => setUser(verifiedUser));
+  }, []);
 
   return (
     <div className="App">
@@ -32,6 +38,9 @@ function App() {
           <Route path="/edit-post/:id">
           <h3>This is Edit/update post!</h3>
             {/* <EditPost /> */}
+          </Route>
+          <Route path="/user-profile">
+            <UserProfile user={user} />
           </Route>
         </main>
       </Switch>
