@@ -107,13 +107,13 @@ export const updatePost = async (updatedPost, postId) => {
   }
 };
 
-export const destroyPost = async (id) => {
+export const destroyPost = async (postId) => {
   try {
     const token = localStorage.getItem("token");
     if (token) {
       const config = buildHeaders(token);
       const response = await axios.delete(
-        `${apiURL}/api/posts/delete-post/${id}`,
+        `${apiURL}/api/posts/delete-post/${postId}`,
         config
       );
       return response.data;
