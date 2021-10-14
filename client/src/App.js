@@ -9,6 +9,7 @@ import UserProfile from "./screens/UserProfile";
 import { verifyUser } from "./services"; 
 import EditPost from "./screens/EditPost";
 import './App.css';
+import "./css/Nav.css"
 
 function App() {
 

@@ -7,7 +7,7 @@ const Nav = ({ user }) => {
         <>
           <Link to="/">Home</Link>
           <Link to="/new-post">New Post</Link>
-                    
+          <Link to="/user-profile"><span>Hi, {user.username}!</span> </Link>    
         </>
       ) : (
         <>
