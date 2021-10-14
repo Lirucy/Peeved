@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams, useHistory } from "react-router-dom";
-import { getPostById } from '../services';
-import { updatePost } from "../services";
-import { getAllPosts } from '../services';
+import { getPostById, updatePost, getAllPosts, destroyPost } from '../services';
 
 const EditPost = () => {
     const [selectedPost, setSelectedPost] = useState({})
@@ -74,6 +72,11 @@ const EditPost = () => {
         }
     };
 
+    const handleDelete = async (e) => {
+        await destroyPost(postId)       
+    history.push("/user-profile");
+    }
+
     return (
         <div>
             <h3>Edit posts here!</h3>
@@ -86,6 +89,7 @@ const EditPost = () => {
                 <button type="submit">submit</button>
                 <button onClick={() => history.push('/user-profile')}>Cancel</button>
             </form>
+            <button type="submit" onClick={handleDelete}>Delete Peeve!</button>
         </div>
     );
 };
