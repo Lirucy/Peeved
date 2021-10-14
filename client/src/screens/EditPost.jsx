@@ -1,19 +1,28 @@
-import { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useParams, useHistory } from "react-router-dom";
+import { getPostById } from '../services';
 
 const EditPost = (props) => {
-    // const params = useParams;
-    // console.log(props.post.params);
-    // const {title, content} = props.post;
+    const [selectedPost, setSelectedPost] = useState({});
+    const params = useParams();
+    const postId = params.id;
+    const history = useHistory();
 
-    // useEffect(() => {
+    useEffect(() => {
+        const getPost = async() => {
+         const fetchedPostsById = await getPostById(postId)
+         setSelectedPost(fetchedPostsById)
+        }
+        getPost()
+        
+    },[postId])
+    
 
-    // })
-
+console.log(selectedPost)
     return (
         <div>
             <h3>Edit posts here!</h3>
-            
+            <button onClick={()=>history.push('/user-profile')}>Back</button>
         </div>
     );
 };
