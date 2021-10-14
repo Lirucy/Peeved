@@ -1,6 +1,7 @@
 const { compareSync, hashSync } = require("bcrypt");
 const { sign, verify } = require("jsonwebtoken");
 const User = require("../models/user");
+const Post = require("../models/post");
 
 const SALT = process.env.SALT || 10;
 const SECRET = process.env.SECRET || "mondaypeeves";
@@ -19,20 +20,34 @@ const comparePasswords = (password, passwordDigest) => compareSync(password, pas
 
 const hashPassword = (password) => hashSync(password, SALT);
 
+const canModify = async (req, res, next) => {
+    try {
+        const post = await Post.findById(req.params.id)
+        console.log(post)
+        if (post.userId === res.locals.user._id) {
+            next();
+        } else {
+            throw new Error("User not authorized to modify");
+        }
+    } catch (e) {
+        return res.status(401).json({ message: e.message });
+    }
+}
+
 const restrict = async (req, res, next) => {
     try {
         if(!req.headers.authorization) {
-            throw new Error("Failed to provide authorization token");
+            throw new Error("Failed to provide authorization token!");
         }
         const token = req.headers.authorization.split(" ")[1];
         const { username } = verify(token, SECRET);
         if (username) {
             const [user] = await User.find({ username });
             res.locals.user = user;
+            next();
         } else {
             throw new Error("User not authorized")
         }
-        next();
     } catch (e) {
         return res.status(401).json({ message: e.message });
     }
@@ -43,5 +58,6 @@ module.exports = {
     createToken, 
     comparePasswords, 
     hashPassword,
-    restrict
+    restrict, 
+    canModify
 };
