@@ -23,6 +23,7 @@ const hashPassword = (password) => hashSync(password, SALT);
 const canModify = async (req, res, next) => {
     try {
         const post = await Post.findById(req.params.id)
+        console.log(post)
         if (post.userId === res.locals.user._id) {
             next();
         } else {

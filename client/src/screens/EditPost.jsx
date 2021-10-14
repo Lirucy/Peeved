@@ -15,6 +15,8 @@ const EditPost = () => {
 
     useEffect(() => {
         getPostById(postId).then((fetchedPost) => setSelectedPost(fetchedPost));
+        console.log(selectedPost);
+
         
         // const getPost = async() => {
         //  const fetchedPostsById = await getPostById(postId)
@@ -30,7 +32,7 @@ const EditPost = () => {
         // }
     // },[]);
     },[postId]);
-    console.log(selectedPost);
+    
 
     useEffect(() => {
         const fetchPosts = async() => {
@@ -49,11 +51,23 @@ const EditPost = () => {
         try {
             e.preventDefault()
 
-        setSelectedPost({
-            ...selectedPost,
-            title,
-            content
-        })
+        setTitle(title)
+        setContent(content)
+
+            const updatedPost = {
+                title, 
+                content
+            }
+        
+            await updatePost(updatedPost, postId)
+            console.log(title, content)        
+            
+
+        // setSelectedPost({
+        //     ...selectedPost,
+        //     title,
+        //     content
+        // })
         history.push("/user-profile");
         } catch (error) {
             console.error(error.message)

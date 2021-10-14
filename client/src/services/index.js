@@ -90,14 +90,14 @@ export const newPost = async (newPost) => {
   }
 };
 
-export const updatePost = async (id) => {
+export const updatePost = async (updatedPost, postId) => {
   try {
     const token = localStorage.getItem("token");
     if (token) {
       const config = buildHeaders(token);
       //may need to remove${id}, on backend haven't been using /:id in path
       const response = await axios.put(
-        `${apiURL}/api/posts/update-post/${id}`,
+        `${apiURL}/api/posts/update-post/${postId}`, updatedPost,
         config
       );
       return response.data;
