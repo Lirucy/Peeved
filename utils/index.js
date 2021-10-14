@@ -20,10 +20,12 @@ const comparePasswords = (password, passwordDigest) => compareSync(password, pas
 
 const hashPassword = (password) => hashSync(password, SALT);
 
+
 const canModify = async (req, res, next) => {
     try {
         const post = await Post.findById(req.params.id)
-        if (post.userId === res.locals.user._id) {
+        console.log(typeof post.userId, typeof res.locals.user._id)
+        if (post.userId.toString() === res.locals.user._id.toString()) {
             next();
         } else {
             throw new Error("User not authorized to modify");
