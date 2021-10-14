@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const apiURL =
-  process.env.NODE_ENV === "development" ? "http://localhost:3001" : null;
+  process.env.NODE_ENV === "development" ? "http://localhost:3001" : "https://peeved-osos.herokuapp.com";
 
 export const registerUser = async (userInfo) => {
   try {

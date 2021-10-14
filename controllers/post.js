@@ -12,7 +12,7 @@ const getAllPosts = async (req,res) => {
 const getPostById = async (req, res) => {
     try {
         const { id } = req.params
-        const post = await Post.findById(id)
+        const post = await Post.findOne({_id: id})
         res.json(post)
     } catch (e) {
         res.status(500).json({ message: e.message })
