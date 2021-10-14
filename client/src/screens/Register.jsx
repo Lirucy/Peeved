@@ -1,6 +1,7 @@
 import{ useState } from "react";
 import {useHistory} from "react-router-dom";
 import { registerUser } from "../services";
+import "./Register.css"
 
 const Register = (props) => {
     const [username, setUsername] = useState("");
@@ -25,15 +26,15 @@ const Register = (props) => {
       }
     return (
         <section>
-            <h1>Register for an Account</h1>
-            <form onSubmit={handleSubmit}>
-            <label htmlFor="username">Username: </label>
-            <input id="username" type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
-            <label htmlFor="email">Email:</label>
-            <input id="email" type="text" value={email} onChange={(e) => setEmail(e.target.value)} />
-            <label htmlFor="password">Password:</label>
-            <input id="password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-            <button type="submit">Sign up!</button>
+        <form onSubmit={handleSubmit} className="form-box">
+          <h1 className="register-text">Register for an Account</h1>
+            <label htmlFor="username"></label>
+            <input placeholder="Username" id="reg-username" type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
+            <label htmlFor="email"></label>
+            <input placeholder="Email" id="reg-email" type="text" value={email} onChange={(e) => setEmail(e.target.value)} />
+            <label htmlFor="password"></label>
+            <input id="reg-password" placeholder="Password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+            <button id="reg-btn" type="submit">Sign up!</button>
             </form>
         </section>
 

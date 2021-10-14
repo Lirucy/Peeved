@@ -59,6 +59,19 @@ export const getAllPosts = async () => {
   }
 };
 
+export const getPostById = async (id) => {
+  try {
+    const token = localStorage.getItem("token");
+    if (token) {
+      const config = buildHeaders(token);
+      const response = await axios.get(`${apiURL}/api/posts/${id}:`, config);
+      return response.data;
+    }
+  } catch (error) {
+    console.error(error.message);
+  }
+}
+
 export const newPost = async (newPost) => {
   try {
     const token = localStorage.getItem("token");

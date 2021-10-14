@@ -7,12 +7,14 @@ import Login from "./screens/Login";
 import NewPost from "./screens/NewPost";
 import UserProfile from "./screens/UserProfile";
 import { verifyUser } from "./services"; 
-// import EditPost from "./screens/EditPost";
+import EditPost from "./screens/EditPost";
 import './App.css';
+import "./css/Nav.css"
 
 function App() {
 
   const [user, setUser] = useState(null)
+  // const [post, setPost] = useState(null)
 
   useEffect (() => {
     verifyUser().then((verifiedUser) => setUser(verifiedUser));
@@ -37,7 +39,7 @@ function App() {
           </Route>
           <Route path="/edit-post/:id">
           <h3>This is Edit/update post!</h3>
-            {/* <EditPost /> */}
+            <EditPost />
           </Route>
           <Route path="/user-profile">
             <UserProfile user={user} />
