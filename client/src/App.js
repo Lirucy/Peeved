@@ -17,7 +17,7 @@ import './css/UserProfile.css'
 import './css/NewPost.css'
 import './css/EditPost.css'
 import './css/ProfilePost.css'
-import './css/Home.css'
+import './css/Home.css' 
 import './css/Post.css'
 
 function App() {
@@ -44,7 +44,7 @@ function App() {
             <Login setUser={setUser}/> 
           </Route>
           <Route path="/post/:id" >
-            <PostDetail />
+            <PostDetail user={user} />
           </Route>
           <Route path="/new-post">
             <NewPost />
