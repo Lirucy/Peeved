@@ -15,7 +15,7 @@ const Post = (props) => {
     useEffect(() => {
         const fetchedFilteredComments = async () =>{
             const fetchedComments = await getAllComments();
-            const filtered = fetchedComments((comment)=> comment.postId === props.post?.id)
+            const filtered = fetchedComments.filter((comment)=> comment.postId === props.post?.id)
             setFilteredComments(filtered)
            
         }
@@ -32,7 +32,13 @@ const Post = (props) => {
         }
     }
     return (
-        <article>
+
+    
+        <article id="post-box">
+            <h3 id= "post-title">{title}</h3>
+            <h4 id="post-content">{content}</h4>
+
+       
             <h3>{title}</h3>
             <h4>{content}</h4>
             {props.user ? (
@@ -43,8 +49,11 @@ const Post = (props) => {
             ) : (
                 <></>
             )}
+
         </article>
+        
     );
 };
+
 
 export default Post;

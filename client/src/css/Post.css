@@ -1,0 +1,11 @@
+#post-box{
+    background-color: blueviolet;
+    width: 500px;
+    margin: 0px 0px 0px 500px; 
+    padding-top: 30px;
+}
+
+#posts-container{
+    display: flex;
+    flex-direction: column;
+}
