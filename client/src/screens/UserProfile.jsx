@@ -24,11 +24,13 @@ const UserProfile = (props) => {
     
     return (
         <section id="user-profile-body">
+            <div className="user-profile-posts">
             <h3>My Pet Peeves!</h3>
             <div>
                 {filteredPosts.map((post) => (
                     <ProfilePost key={post._id} post={post} />
                 ))}
+            </div>
             </div>
         </section>
     );

@@ -32,6 +32,12 @@ const Post = (props) => {
         }
     }
     return (
+
+        <div id="posts-container">
+        <article id="post-box">
+            <h3 id= "post-title">{title}</h3>
+            <h4 id="post-content">{content}</h4>
+
         <article>
             <h3>{title}</h3>
             <h4>{content}</h4>
@@ -43,8 +49,11 @@ const Post = (props) => {
             ) : (
                 <></>
             )}
+
         </article>
+        </div>
     );
 };
+
 
 export default Post;

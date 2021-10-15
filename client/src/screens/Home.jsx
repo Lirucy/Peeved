@@ -11,6 +11,14 @@ const Home = ({ user }) => {
     }, []);
     return (
         <section className="home">
+
+            <h3 id="top-peeve-title">Checkout our Top Pet Peeves!</h3>
+            <div>
+                {posts.map((post) => (
+                    <Post key={post._id} post={post} />
+                ))}
+            </div>
+
             <h3>Checkout our Top Pet Peeves!</h3>
 
 
@@ -18,7 +26,6 @@ const Home = ({ user }) => {
                 <Post key={post._id} post={post} user={user}
                 />
             ))}
-
 
 
         </section>
