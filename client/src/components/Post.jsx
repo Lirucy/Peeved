@@ -15,7 +15,7 @@ const Post = (props) => {
     useEffect(() => {
         const fetchedFilteredComments = async () =>{
             const fetchedComments = await getAllComments();
-            const filtered = fetchedComments((comment)=> comment.postId === props.post?.id)
+            const filtered = fetchedComments.filter((comment)=> comment.postId === props.post?.id)
             setFilteredComments(filtered)
            
         }

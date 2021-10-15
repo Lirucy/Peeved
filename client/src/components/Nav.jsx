@@ -1,6 +1,21 @@
-import { Link } from "react-router-dom";
+import e from "cors";
+import { Link, useHistory } from "react-router-dom";
+// import { useEffect } from "react";
 
-const Nav = ({ user }) => {
+
+
+const Nav = ({ user, setUser }) => {
+
+  const history = useHistory();
+
+
+    const logOut = async () => {
+      localStorage.removeItem("token", user);
+      window.localStorage.clear();
+      setUser(null);
+      history.push("/login");
+    }
+
   return (
     <nav>
       {user ? (
@@ -9,8 +24,7 @@ const Nav = ({ user }) => {
           <Link to="/new-post">New Post</Link>
 
           <Link id="user" to="/user-profile"><span>Hi, {user.username}!</span> </Link>    
-
-
+          <button onClick={logOut}>Log Out</button>
         </>
       ) : (
         <>
