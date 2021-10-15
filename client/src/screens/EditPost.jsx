@@ -53,29 +53,31 @@ const EditPost = () => {
   };
 
   return (
-    <div>
-      <h3>Edit your Peeve!</h3>
-      <form onSubmit={handleOnSubmit}>
-        <label htmlFor="title">Title: </label>
+    <div id="edit-section">
+    <form id="edit-form" onSubmit={handleOnSubmit}>
+    <h3 id="edit-peeve-title">Edit your Peeve!</h3>
+        <label htmlFor="title"></label>
         <input
-          id="title"
+          id="edit-title"
           type="text"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
-        <label htmlFor="content">Content: </label>
+        <label htmlFor="content"></label>
         <textarea
-          id="content"
+          id="edit-content"
           type="text"
           value={content}
           onChange={(e) => setContent(e.target.value)}
         />
-        <button type="submit">submit</button>
-        <button onClick={() => history.push("/user-profile")}>Cancel</button>
+        <div className="all-btns">
+        <button id="submit-btn" type="submit">submit</button>
+        <button  id="cancel-btn"onClick={() => history.push("/user-profile")}>Cancel</button>
+        <button id="edit-delete-btn"type="submit" onClick={handleDelete}>
+          Delete Peeve!
+        </button>
+        </div>
       </form>
-      <button type="submit" onClick={handleDelete}>
-        Delete Peeve!
-      </button>
     </div>
   );
 };

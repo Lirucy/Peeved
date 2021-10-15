@@ -4,11 +4,7 @@
     height: 95vh;
 }
 
-body{
-    margin: 0;
-    padding: 0;
-    background: hsl(0, 0%, 82%);
-}
+
 
 .log-form-box{
     width: 500px;

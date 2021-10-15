@@ -13,7 +13,11 @@ import "./css/Nav.css"
 import './css/Login.css'
 import './css/Register.css'
 import './css/UserProfile.css'
-
+import './css/NewPost.css'
+import './css/EditPost.css'
+import './css/ProfilePost.css'
+import './css/Home.css'
+import './css/Post.css'
 
 function App() {
 
@@ -42,7 +46,6 @@ function App() {
             <NewPost />
           </Route>
           <Route path="/edit-post/:id">
-          <h3>This is Edit/update post!</h3>
             <EditPost />
           </Route>
           <Route path="/user-profile">
