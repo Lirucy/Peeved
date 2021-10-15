@@ -47,17 +47,26 @@ export const verifyUser = async () => {
 
 export const getAllPosts = async () => {
   try {
-    const token = localStorage.getItem("token");
-    if (token) {
-      const config = buildHeaders(token);
-      const response = await axios.get(`${apiURL}/api/posts`, config);
+      const response = await axios.get(`${apiURL}/api/posts`);
       return response.data;
-    }
-    return [];
   } catch (error) {
     console.error(error.message);
   }
 };
+
+// export const getAllPosts = async () => {
+//   try {
+//     const token = localStorage.getItem("token");
+//     if (token) {
+//       const config = buildHeaders(token);
+//       const response = await axios.get(`${apiURL}/api/posts`, config);
+//       return response.data;
+//     }
+//     return [];
+//   } catch (error) {
+//     console.error(error.message);
+//   }
+// };
 
 export const getPostById = async (id) => {
   try {
@@ -114,6 +123,69 @@ export const destroyPost = async (postId) => {
       const config = buildHeaders(token);
       const response = await axios.delete(
         `${apiURL}/api/posts/delete-post/${postId}`,
+        config
+      );
+      return response.data;
+    }
+  } catch (error) {
+    console.error(error.message);
+  }
+};
+
+//comments
+
+export const getAllComments = async () => {
+  try {
+    const token = localStorage.getItem("token");
+    if (token) {
+      const config = buildHeaders(token);
+      const response = await axios.get(`${apiURL}/api/comments`, config);
+      return response.data;
+    }
+    return [];
+  } catch (error) {
+    console.error(error.message);
+  }
+};
+
+export const getCommentById = async (id) => {
+  try {
+    const token = localStorage.getItem("token");
+    if (token) {
+      const config = buildHeaders(token);
+      const response = await axios.get(`${apiURL}/api/comments/${id}:`, config);
+      return response.data;
+    }
+  } catch (error) {
+    console.error(error.message);
+  }
+}
+
+export const newComment = async (newComment) => {
+  try {
+    const token = localStorage.getItem("token");
+    if (token) {
+      const config = buildHeaders(token);
+      const response = await axios.post(
+        `${apiURL}/api/comments/new-comment`,
+        newComment,
+        config
+      );
+      return response.data;
+    }
+    return [];
+  } catch (error) {
+    console.error(error.message);
+  }
+};
+
+export const destroyComment = async (commentId) => {
+  try {
+    const token = localStorage.getItem("token");
+    if (token) {
+      const config = buildHeaders(token);
+      const response = await axios.delete(
+        `${apiURL}/api/posts/delete-comment/${commentId}`,
         config
       );
       return response.data;
