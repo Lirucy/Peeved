@@ -1,4 +1,3 @@
-import e from "cors";
 import { Link, useHistory } from "react-router-dom";
 
 const Nav = ({ user, setUser }) => {
