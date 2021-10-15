@@ -9,18 +9,19 @@ const Home = ({ user }) => {
     useEffect(() => {
         getAllPosts().then((fetchedPosts) => setPosts(fetchedPosts));
     }, []);
-    return (
+    return ( 
         <section className="home">
-
-            <h3 id="top-peeve-title">Checkout our Top Pet Peeves!</h3>
-            <div>
+        
+        <h3 id="top-peeve-title">Checkout our Top Pet Peeves!</h3>
+            <div className="all-posts">
                 {posts.map((post) => (
                     <Post key={post._id} post={post} user={user} />
                 ))}
-            </div>
+                </div>
 
 
         </section>
+        
     );
 };
 
