@@ -58,7 +58,7 @@
 #peeve-submit-btn{
     margin-bottom: -50px;
     padding: 15px 25px;
-    font-size: 24px;
+    font-size: 20px;
     text-align: center;
     cursor: pointer;
     outline: none;
@@ -68,6 +68,7 @@
     border-radius: 15px;
     box-shadow: 0px 3px 3px #999;
     width: 110px;
+
 }
 
 #peeve-submit-btn:active{
@@ -80,3 +81,4 @@
 #new-title:focus{
     width: 320px;
 }
+
