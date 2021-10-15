@@ -13,7 +13,7 @@ const NewPost = () => {
 
             const post = {
                 title, 
-                content
+                content 
             }
             await newPost(post);
             history.push("/");
