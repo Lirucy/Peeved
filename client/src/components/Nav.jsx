@@ -1,13 +1,28 @@
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
-const Nav = ({ user }) => {
+const Nav = ({ user, setUser }) => {
+  const history = useHistory();
+
+  const logOut = async () => {
+    localStorage.removeItem("token", user);
+    window.localStorage.clear();
+    setUser(null);
+    history.push("/login");
+  };
+
   return (
     <nav>
       {user ? (
         <>
           <Link to="/">Home</Link>
           <Link to="/new-post">New Post</Link>
-          <Link id="user" to="/user-profile"><span>Hi, {user.username}!</span> </Link>    
+
+          <Link id="user" to="/user-profile">
+            <span>Hi, {user.username}!</span>{" "}
+          </Link>
+          <Link to="/login" onClick={logOut}>
+            Log Out
+          </Link>
         </>
       ) : (
         <>
