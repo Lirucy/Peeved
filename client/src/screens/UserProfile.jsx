@@ -13,7 +13,7 @@ const UserProfile = (props) => {
 
         const fetchedFilteredPosts = async () => {
             const fetchedPosts = await getAllPosts();
-            const filter = fetchedPosts.filter((post) => post.userId === props.user?.id);
+            const filter = fetchedPosts.filter((post) => post.userId === props.user?.id); 
             setFilteredPosts(filter);
         }
         fetchedFilteredPosts();

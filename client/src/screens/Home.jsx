@@ -4,7 +4,6 @@ import Post from "../components/Post";
 
 const Home = ({ user }) => {
     const [posts, setPosts] = useState([]);
-    const [comment, setComment] = useState('');
 
     useEffect(() => {
         getAllPosts().then((fetchedPosts) => setPosts(fetchedPosts));
