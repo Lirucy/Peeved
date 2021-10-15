@@ -34,7 +34,7 @@ function App() {
       <Switch>
         <main>
           <Route exact path="/">
-            <Home />
+            <Home user = {user} />
           </Route>
           <Route path="/register">
              <Register setUser= {setUser}/> 
