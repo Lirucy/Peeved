@@ -10,6 +10,16 @@ const getAllPosts = async (req,res) => {
     }
 }
 
+const getPostById = async (req, res) => {
+    try {
+        const { id } = req.params
+        const post = await Post.findOne({_id: id})
+        res.json(post)
+    } catch (e) {
+        res.status(500).json({ message: e.message })
+    }
+}
+
 const newPost = async (req, res) => {
     try {
         const post = new Post({...req.body, userId:res.locals.user._id});
@@ -23,7 +33,6 @@ const newPost = async (req, res) => {
 
 const updatePost = async (req, res) => {
     try {
-       if( id === User._id )
         const { id } = req.params;
         Post.findByIdAndUpdate(id, req.body, { new: true }, (e, post) => {
             if (e) {
@@ -59,6 +68,7 @@ const destroyPost = async (req, res) => {
 
 module.exports = {
     getAllPosts,
+    getPostById,
     newPost,
     updatePost,
     destroyPost

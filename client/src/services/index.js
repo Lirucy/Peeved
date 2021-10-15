@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const apiURL =
-  process.env.NODE_ENV === "development" ? "http://localhost:3001" : null;
+  process.env.NODE_ENV === "development" ? "http://localhost:3001" : "https://peeved-osos.herokuapp.com";
 
 export const registerUser = async (userInfo) => {
   try {
@@ -59,6 +59,19 @@ export const getAllPosts = async () => {
   }
 };
 
+export const getPostById = async (id) => {
+  try {
+    const token = localStorage.getItem("token");
+    if (token) {
+      const config = buildHeaders(token);
+      const response = await axios.get(`${apiURL}/api/posts/${id}:`, config);
+      return response.data;
+    }
+  } catch (error) {
+    console.error(error.message);
+  }
+}
+
 export const newPost = async (newPost) => {
   try {
     const token = localStorage.getItem("token");
@@ -77,14 +90,14 @@ export const newPost = async (newPost) => {
   }
 };
 
-export const updatePost = async (id) => {
+export const updatePost = async (updatedPost, postId) => {
   try {
     const token = localStorage.getItem("token");
     if (token) {
       const config = buildHeaders(token);
       //may need to remove${id}, on backend haven't been using /:id in path
       const response = await axios.put(
-        `${apiURL}/api/posts/update-post/${id}`,
+        `${apiURL}/api/posts/update-post/${postId}`, updatedPost,
         config
       );
       return response.data;
@@ -94,13 +107,13 @@ export const updatePost = async (id) => {
   }
 };
 
-export const destroyPost = async (id) => {
+export const destroyPost = async (postId) => {
   try {
     const token = localStorage.getItem("token");
     if (token) {
       const config = buildHeaders(token);
       const response = await axios.delete(
-        `${apiURL}/api/posts/delete-post/${id}`,
+        `${apiURL}/api/posts/delete-post/${postId}`,
         config
       );
       return response.data;

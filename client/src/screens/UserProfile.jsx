@@ -23,7 +23,7 @@ const UserProfile = (props) => {
     
     
     return (
-        <section>
+        <section id="user-profile-body">
             <h3>My Pet Peeves!</h3>
             <div>
                 {filteredPosts.map((post) => (
