@@ -11,9 +11,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(logger("dev"));
-
 app.use("/api", api);
-
 app.get("/", (req, res) =>
 res.status(200).json({ message: "All up in the root route!" })
 );

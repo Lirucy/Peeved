@@ -10,6 +10,10 @@ import { verifyUser } from "./services";
 import EditPost from "./screens/EditPost";
 import './App.css';
 import "./css/Nav.css"
+import './css/Login.css'
+import './css/Register.css'
+import './css/UserProfile.css'
+
 
 function App() {
 

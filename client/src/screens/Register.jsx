@@ -24,20 +24,21 @@ const Register = (props) => {
         }
       }
     return (
-        <section>
-            <h1>Register for an Account</h1>
-            <form onSubmit={handleSubmit}>
-            <label htmlFor="username">Username: </label>
-            <input id="username" type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
-            <label htmlFor="email">Email:</label>
-            <input id="email" type="text" value={email} onChange={(e) => setEmail(e.target.value)} />
-            <label htmlFor="password">Password:</label>
-            <input id="password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-            <button type="submit">Sign up!</button>
+        <section id="reg-body">
+        <form className ="reg-form-box"onSubmit={handleSubmit}>
+          <h1 className='register-text'>Register for an Account</h1>
+            <label htmlFor="username"></label>
+            <input id="reg-username" placeholder="username" type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
+            <label htmlFor="email"></label>
+            <input id="reg-email" placeholder="email" type="text" value={email} onChange={(e) => setEmail(e.target.value)} />
+            <label htmlFor="password"></label>
+            <input id="reg-password" placeholder="password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+            <button id='reg-btn' type="submit">Sign up!</button>
             </form>
         </section>
 
     );
 };
+
 
 export default Register;
