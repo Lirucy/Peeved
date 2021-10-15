@@ -7,7 +7,7 @@ const { restrict, canModify } = require("../utils");
 const postRouter = new Router();
 
 postRouter.get("/", postController.getAllPosts);
-postRouter.get("/:id", restrict, postController.getPostById);
+postRouter.get("/:id", postController.getPostById);
 postRouter.post("/new-post", restrict, postController.newPost);
 postRouter.put("/update-post/:id", restrict, canModify, postController.updatePost);
 postRouter.delete("/delete-post/:id", restrict, canModify, postController.destroyPost);
