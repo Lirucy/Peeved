@@ -8,7 +8,7 @@ const Post = (props) => {
         <article>
             <h3>{title}</h3>
             <h4>{content}</h4>
-        <Link to={`/post/${props.post._id}`}>More</Link>
+        <Link to={`/post/${props.post._id}`}>Comment</Link>
         </article>
     );
 };

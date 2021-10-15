@@ -1,5 +1,6 @@
 const Post = require("../models/post");
 const User = require("../models/user");
+const Comment = require("../models/comment");
 
 const getAllPosts = async (req,res) => {
     try {
@@ -14,7 +15,9 @@ const getPostById = async (req, res) => {
     try {
         const { id } = req.params
         const post = await Post.findOne({_id: id})
-        res.json(post)
+        const postAsJson = post.toJSON();
+        const comments = await Comment.find({postId: id})
+        res.json({...postAsJson, comments})
     } catch (e) {
         res.status(500).json({ message: e.message })
     }
