@@ -15,7 +15,7 @@ const Home = ({ user }) => {
             <h3 id="top-peeve-title">Checkout our Top Pet Peeves!</h3>
             <div>
                 {posts.map((post) => (
-                    <Post key={post._id} post={post} />
+                    <Post key={post._id} post={post} user={user} />
                 ))}
             </div>
 
