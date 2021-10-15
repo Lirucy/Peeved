@@ -1,7 +1,9 @@
 import axios from "axios";
 
 const apiURL =
-  process.env.NODE_ENV === "development" ? "http://localhost:3001" : "https://peeved-osos.herokuapp.com";
+  process.env.NODE_ENV === "development"
+    ? "http://localhost:3001"
+    : "https://peeved-osos.herokuapp.com";
 
 export const registerUser = async (userInfo) => {
   try {
@@ -26,8 +28,8 @@ export const loginUser = async (userInfo) => {
 const buildHeaders = (token) => {
   return {
     headers: {
-      Authorization: `Bearer ${token}`, 
-    }
+      Authorization: `Bearer ${token}`,
+    },
   };
 };
 
@@ -47,26 +49,12 @@ export const verifyUser = async () => {
 
 export const getAllPosts = async () => {
   try {
-      const response = await axios.get(`${apiURL}/api/posts`);
-      return response.data;
+    const response = await axios.get(`${apiURL}/api/posts`);
+    return response.data;
   } catch (error) {
     console.error(error.message);
   }
 };
-
-// export const getAllPosts = async () => {
-//   try {
-//     const token = localStorage.getItem("token");
-//     if (token) {
-//       const config = buildHeaders(token);
-//       const response = await axios.get(`${apiURL}/api/posts`, config);
-//       return response.data;
-//     }
-//     return [];
-//   } catch (error) {
-//     console.error(error.message);
-//   }
-// };
 
 export const getPostById = async (id) => {
   try {
@@ -79,7 +67,7 @@ export const getPostById = async (id) => {
   } catch (error) {
     console.error(error.message);
   }
-}
+};
 
 export const newPost = async (newPost) => {
   try {
@@ -104,9 +92,9 @@ export const updatePost = async (updatedPost, postId) => {
     const token = localStorage.getItem("token");
     if (token) {
       const config = buildHeaders(token);
-      //may need to remove${id}, on backend haven't been using /:id in path
       const response = await axios.put(
-        `${apiURL}/api/posts/update-post/${postId}`, updatedPost,
+        `${apiURL}/api/posts/update-post/${postId}`,
+        updatedPost,
         config
       );
       return response.data;
@@ -131,8 +119,6 @@ export const destroyPost = async (postId) => {
     console.error(error.message);
   }
 };
-
-//comments
 
 export const getAllComments = async () => {
   try {
@@ -159,7 +145,7 @@ export const getCommentById = async (id) => {
   } catch (error) {
     console.error(error.message);
   }
-}
+};
 
 export const newComment = async (newComment) => {
   try {
