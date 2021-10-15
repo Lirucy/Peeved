@@ -13,7 +13,7 @@ const NewPost = () => {
 
             const post = {
                 title, 
-                content
+                content 
             }
             await newPost(post);
             history.push("/");
@@ -23,9 +23,9 @@ const NewPost = () => {
     };
 
     return (
-        <section>
-            <h3>Add a Peeve!</h3>
-            <form onSubmit={handleSubmit}>
+        <section id="new-section">
+            <h3 id="add-peeve-text">Add a Peeve!</h3>
+            <form onSubmit={handleSubmit} className="new-form">
                 <label htmlFor="title">Title: </label>
                 <input id="title" type="text" placeholder="Enter peeve title" value={title} onChange={(e) => setTitle(e.target.value)}/>
                 <label htmlFor="content">Description: </label>

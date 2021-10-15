@@ -1,4 +1,5 @@
 const Post = require("../models/post");
+const User = require("../models/user");
 
 const getAllPosts = async (req,res) => {
     try {
@@ -46,6 +47,7 @@ const updatePost = async (req, res) => {
         res.status(500).json({ message: e.message });
     }
 }
+
 
 const destroyPost = async (req, res) => {
     try {
