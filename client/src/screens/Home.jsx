@@ -19,14 +19,6 @@ const Home = ({ user }) => {
                 ))}
             </div>
 
-            <h3>Checkout our Top Pet Peeves!</h3>
-
-
-            {posts.map((post) => (
-                <Post key={post._id} post={post} user={user}
-                />
-            ))}
-
 
         </section>
     );
