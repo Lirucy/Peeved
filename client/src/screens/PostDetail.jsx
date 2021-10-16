@@ -1,11 +1,10 @@
 import { useState, useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
-import { getAllComments, getPostById, newComment } from "../services";
+import { getPostById, newComment } from "../services";
 
 const PostDetail = (props) => {
   const [post, setPost] = useState({});
-  const [comments, setComments] = useState("");
-//   const [comment, setComment] = useState("");
+  const [comment, setComment] = useState("");
   const params = useParams();
   const postId = params.id;
   const history = useHistory();
@@ -21,23 +20,18 @@ const PostDetail = (props) => {
     fetchedPostById();
   }, [postId]);
 
-  //don't need this
-//   useEffect(() => {
-//       getAllComments().then((fetchedCommnets) => setComments(fetchedComments));
-//   }, []);
-
   const handleOnSubmit = async (e) => {
-      try {
-          e.preventDefault();
-        const comment = {
-            comment
-        }
-        await newComment(comment);
-        // history.push("/user-profile")
-      } catch (error) {
-          console.error(error.message);
-      }
-  }
+    try {
+      e.preventDefault();
+      const comment = {
+        comment,
+      };
+      await newComment(comment);
+      history.push("/user-profile");
+    } catch (error) {
+      console.error(error.message);
+    }
+  };
 
   return (
     <article>
@@ -47,13 +41,23 @@ const PostDetail = (props) => {
         <p>{comment.comment}</p>
       ))}
       {props.user ? (
-                <>
-                    <input type='text' value={comments} onChange={(e) => setComments(e.target.value)} placeholder='comment here' />
-                    <button type="submit" onClick={handleOnSubmit}>Comment</button>
-                </>
-            ) : (
-                <></>
-            )}
+        <>
+          <input
+            id="post-comment"
+            type="text"
+            required
+            autoFocus
+            value={comment}
+            onChange={(e) => setComment(e.target.value)}
+            placeholder="comment here"
+          />
+          <button type="submit" onClick={handleOnSubmit}>
+            Comment
+          </button>
+        </>
+      ) : (
+        <></>
+      )}
     </article>
   );
 };

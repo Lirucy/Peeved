@@ -60,6 +60,8 @@ const EditPost = () => {
         <input
           id="edit-title"
           type="text"
+          autofocus
+          required
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
@@ -67,6 +69,8 @@ const EditPost = () => {
         <textarea
           id="edit-content"
           type="text"
+          required
+          autoFocus
           value={content}
           onChange={(e) => setContent(e.target.value)}
         />
