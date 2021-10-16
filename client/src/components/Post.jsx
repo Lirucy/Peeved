@@ -44,7 +44,6 @@ const Post = (props) => {
             className="box-shadow"
             type="text"
             required
-            autoFocus
             value={comment}
             placeholder="comment here"
           />
