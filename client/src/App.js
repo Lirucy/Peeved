@@ -8,6 +8,7 @@ import NewPost from "./screens/NewPost";
 import UserProfile from "./screens/UserProfile";
 import { verifyUser } from "./services"; 
 import EditPost from "./screens/EditPost";
+import EasterEgg from "./screens/EasterEgg";
 import PostDetail from "./screens/PostDetail";
 import './App.css';
 import "./css/Nav.css"
@@ -54,6 +55,9 @@ function App() {
           </Route>
           <Route path="/user-profile">
             <UserProfile user={user} />
+          </Route>
+          <Route path="/easter-egg">
+            <EasterEgg />
           </Route>
         </main>
       </Switch>
