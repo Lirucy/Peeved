@@ -8,6 +8,7 @@ import NewPost from "./screens/NewPost";
 import UserProfile from "./screens/UserProfile";
 import { verifyUser } from "./services"; 
 import EditPost from "./screens/EditPost";
+import PostDetail from "./screens/PostDetail";
 import './App.css';
 import "./css/Nav.css"
 import './css/Login.css'
@@ -16,7 +17,7 @@ import './css/UserProfile.css'
 import './css/NewPost.css'
 import './css/EditPost.css'
 import './css/ProfilePost.css'
-import './css/Home.css'
+import './css/Home.css' 
 import './css/Post.css'
 
 function App() {
@@ -41,6 +42,9 @@ function App() {
           </Route>
           <Route path="/login">
             <Login setUser={setUser}/> 
+          </Route>
+          <Route path="/post/:id" >
+            <PostDetail user={user} />
           </Route>
           <Route path="/new-post">
             <NewPost />

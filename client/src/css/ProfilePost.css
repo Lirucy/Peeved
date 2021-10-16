@@ -1,4 +1,14 @@
 #user-post-box{
     margin: 10px;
-    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    border-radius: 15px;
+}
+
+#users-post{
+    background-color: brown;
+    margin-top: 5px;
+    border-radius: 15px;
+
 }

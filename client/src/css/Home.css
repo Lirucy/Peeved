@@ -2,5 +2,21 @@
     background-color: rgb(199, 199, 199);
     width: auto;
     height: 95vh;
-    margin-top: -20px;
+    margin-top: -26px;
+    
 }
+
+.all-posts{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+
+#top-peeve-title{
+    padding: 15px;
+    font-size: 25px;
+    text-align: center;
+    font-family: 'Permanent Marker', cursive;
+}
+
