@@ -54,11 +54,12 @@ const EditPost = () => {
 
   return (
     <div id="edit-section">
-    <form id="edit-form" onSubmit={handleOnSubmit}>
+    <form id="edit-form" className="box-shadow" onSubmit={handleOnSubmit}>
     <h3 id="edit-peeve-title">Edit your Peeve!</h3>
         <label htmlFor="title"></label>
         <input
           id="edit-title"
+          className="box-shadow"
           type="text"
           autofocus
           required
@@ -68,6 +69,7 @@ const EditPost = () => {
         <label htmlFor="content"></label>
         <textarea
           id="edit-content"
+          className="box-shadow"
           type="text"
           required
           autoFocus
@@ -75,9 +77,9 @@ const EditPost = () => {
           onChange={(e) => setContent(e.target.value)}
         />
         <div className="all-btns">
-        <button id="submit-btn" type="submit">submit</button>
-        <button  id="cancel-btn"onClick={() => history.push("/user-profile")}>Cancel</button>
-        <button id="edit-delete-btn"type="submit" onClick={handleDelete}>
+        <button id="submit-btn" className="box-shadow" type="submit">submit</button>
+        <button  id="cancel-btn" className="box-shadow" onClick={() => history.push("/user-profile")}>Cancel</button>
+        <button id="edit-delete-btn" className="box-shadow" type="submit" onClick={handleDelete}>
           Delete Peeve!
         </button>
         </div>

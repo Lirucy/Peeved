@@ -25,11 +25,12 @@ const Register = (props) => {
   };
   return (
     <section id="reg-body">
-      <form className="reg-form-box" onSubmit={handleSubmit}>
+      <form className="reg-form-box box-shadow" onSubmit={handleSubmit}>
         <h1 className="register-text">Register for an Account</h1>
         <label htmlFor="username"></label>
         <input
           id="reg-username"
+          className="box-shadow"
           placeholder="username"
           type="text"
           required
@@ -40,6 +41,7 @@ const Register = (props) => {
         <label htmlFor="email"></label>
         <input
           id="reg-email"
+          className="box-shadow"
           placeholder="email"
           type="text"
           required
@@ -49,13 +51,14 @@ const Register = (props) => {
         <label htmlFor="password"></label>
         <input
           id="reg-password"
+          className="box-shadow"
           placeholder="password"
           type="password"
           required
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button id="reg-btn" type="submit">
+        <button id="reg-btn" className="box-shadow" type="submit">
           Sign up!
         </button>
       </form>

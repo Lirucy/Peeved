@@ -16,7 +16,6 @@ const Nav = ({ user, setUser }) => {
         <>
           <Link to="/">Home</Link>
           <Link to="/new-post">New Post</Link>
-
           <Link id="user" to="/user-profile">
             <span>Hi, {user.username}!</span>{" "}
           </Link>
@@ -26,6 +25,7 @@ const Nav = ({ user, setUser }) => {
         </>
       ) : (
         <>
+          <Link to="/">Home</Link>
           <Link to="/login">Login</Link>
           <Link to="/register">Register</Link>
         </>

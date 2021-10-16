@@ -23,11 +23,12 @@ const Login = (props) => {
   };
   return (
     <section className="login-body">
-      <form className="log-form-box" onSubmit={handelSubmit}>
+      <form className="log-form-box box-shadow" onSubmit={handelSubmit}>
         <h3 className="login-text">Login to your account!</h3>
         <label htmlFor="username"> </label>
         <input
           id="username"
+          className="box-shadow"
           placeholder="username"
           type="text"
           required
@@ -38,13 +39,14 @@ const Login = (props) => {
         <label htmlFor="password"></label>
         <input
           id="password"
+          className="box-shadow"
           placeholder="password"
           required
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button id="btn" type="submit">
+        <button id="btn" className="box-shadow" type="submit">
           Sign in!
         </button>
       </form>

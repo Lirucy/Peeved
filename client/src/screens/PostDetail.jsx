@@ -34,7 +34,7 @@ const PostDetail = (props) => {
   };
 
   return (
-    <article>
+    <article className="box-shadow">
       <h3>{post?.title}</h3>
       <h4>{post?.content}</h4>
       {post?.comments?.map((comment) => (
@@ -44,6 +44,7 @@ const PostDetail = (props) => {
         <>
           <input
             id="post-comment"
+            className="box-shadow"
             type="text"
             required
             autoFocus
@@ -51,7 +52,7 @@ const PostDetail = (props) => {
             onChange={(e) => setComment(e.target.value)}
             placeholder="comment here"
           />
-          <button type="submit" onClick={handleOnSubmit}>
+          <button className="box-shadow" type="submit" onClick={handleOnSubmit}>
             Comment
           </button>
         </>
