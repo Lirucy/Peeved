@@ -6,6 +6,7 @@ import {
   getAllComments,
   getAllPosts,
 } from "../services";
+import '../css/Post.css'
 
 const Post = (props) => {
   const { title, content } = props.post;

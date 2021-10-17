@@ -20,6 +20,7 @@ import './css/EditPost.css'
 import './css/ProfilePost.css'
 import './css/Home.css' 
 import './css/Post.css'
+import './css/EasterEgg.css'
 
 function App() {
 

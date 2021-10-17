@@ -1,9 +1,11 @@
  #post-box{
-    background-color: blueviolet;
+    background-color: #ff2e00;
     width: 500px; 
     height: 200px;
     padding-top: 0px;
     border-radius: 4px;
     text-align: center;
     margin-bottom: 20px;
+    height: 100%;
 } 
+
