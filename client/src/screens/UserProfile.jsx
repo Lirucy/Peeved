@@ -18,13 +18,11 @@ const UserProfile = (props) => {
 
   return (
     <section id="user-profile-body">
-      <div className="user-profile-posts">
-        <h1 className="page-title" id="my-peeves-h3">My Pet Peeves!</h1>
-        <div>
-          {filteredPosts.map((post) => (
-            <ProfilePost key={post._id} post={post} />
-          ))}
-        </div>
+      <h1 className="page-title" id="my-peeves-h3">My Pet Peeves!</h1>
+      <div>
+        {filteredPosts.map((post) => (
+          <ProfilePost key={post._id} post={post} />
+        ))}
       </div>
     </section>
   );
