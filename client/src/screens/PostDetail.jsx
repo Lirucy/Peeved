@@ -34,7 +34,7 @@ const PostDetail = (props) => {
   };
 
   return (
-    <div>
+    <div className='detail'>
       <h1>Peeve Comments</h1>
       <article id="details-sections" className="box-shadow">
         <h3 className='comment-detail'>{post?.title}</h3>
