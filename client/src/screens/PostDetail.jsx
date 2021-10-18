@@ -23,8 +23,12 @@ const PostDetail = (props) => {
   const handleOnSubmit = async (e) => {
     try {
       e.preventDefault();
+      // const userId = props.user._id
+      // const postId = props.post._id
       const comment = {
         comment,
+        // userId,
+        // postId
       };
       await newComment(comment);
       history.push("/user-profile");
@@ -34,32 +38,36 @@ const PostDetail = (props) => {
   };
 
   return (
-    <article className="box-shadow">
-      <h3>{post?.title}</h3>
-      <h4>{post?.content}</h4>
-      {post?.comments?.map((comment) => (
-        <p>{comment.comment}</p>
-      ))}
-      {props.user ? (
-        <>
-          <input
-            id="post-comment"
-            className="box-shadow"
-            type="text"
-            required
-            autoFocus
-            value={comment}
-            onChange={(e) => setComment(e.target.value)}
-            placeholder="comment here"
-          />
-          <button className="box-shadow" type="submit" onClick={handleOnSubmit}>
-            Comment
-          </button>
-        </>
-      ) : (
-        <></>
-      )}
-    </article>
+    <div>
+      <h1>Peeve Comments</h1>
+      <article id="details-sections" className="box-shadow">
+        <h3 className='comment-detail'>{post?.title}</h3>
+        <h4 className='comment-detail'>{post?.content}</h4>
+        <h3 className='comment-detail'>Comments:</h3>
+        {post?.comments?.map((comment) => (
+          <p id="all-comments" className='comment-detail'>{comment.comment}</p>
+        ))}
+        {props.user ? (
+          <>
+            <input
+              id="post-comment"
+              className="box-shadow"
+              type="text"
+              required
+              autoFocus
+              value={comment}
+              onChange={(e) => setComment(e.target.value)}
+              placeholder="comment here"
+            />
+            <button id="detail-comment-btn" className="box-shadow" type="submit" onClick={handleOnSubmit}>
+              Comment
+            </button>
+          </>
+        ) : (
+          <></>
+        )}
+      </article>
+    </div>
   );
 };
 

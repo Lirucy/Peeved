@@ -1,0 +1,36 @@
+#details-sections{
+    text-align: center;
+    width: 400px;
+    height: auto;
+    padding: 10px;
+    margin: 0px auto;
+    background-color: #494949;
+    border: 1px solid #fffecb;
+    border-radius: 15px;
+}
+h1{
+    font-size: 40px;
+    text-align: center;
+    font-family: 'Permanent Marker', cursive;
+}
+
+.comment-detail{
+    color: white;
+    font-size: 25px;
+    
+}
+
+button {
+    background-color: #027e1d;
+	border-radius:9px;
+	border:1px solid #18ab29;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:12px;
+	padding:4px 8px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+    margin: 10px;
+}

@@ -1,0 +1,36 @@
+.easter-page {
+    background-color: rgb(199, 199, 199);
+    font-weight: bolder;
+    text-align: center;
+}
+.page-title{
+    font-size: 40px;
+    font-family: 'Permanent Marker', cursive;
+}
+
+h1, h2, h3, h4, p {
+    color: #272f49;
+    padding: 0.2rem;
+    font-weight: bolder;
+    
+}
+
+
+
+@media (max-width: 599px) {
+    .easter-page {
+        background: linear-gradient(red, orange);
+        border: 5px solid white;
+        font-weight: bolder;
+        text-align: center;
+    }
+    
+    h1, h2, h3, h4, p {
+        color: white;
+        padding: 0.2rem;
+        font-weight: bolder;
+        text-shadow: 0px 0px 10px black;
+    }
+    
+
+}

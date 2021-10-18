@@ -1,11 +1,6 @@
 import { useState, useEffect } from "react";
-import { useParams, useHistory } from "react-router-dom";
-import {
-  getCommentById,
-  getPostById,
-  getAllComments,
-  getAllPosts,
-} from "../services";
+import { useParams, useHistory, Link } from "react-router-dom";
+import { getAllComments, newComment } from "../services";
 
 const Post = (props) => {
   const { title, content } = props.post;
@@ -29,28 +24,42 @@ const Post = (props) => {
   const handleOnSubmit = async (e) => {
     try {
       e.preventDefault();
+      const comment = {
+        comment
+      };
+      await newComment(comment);
+      history.push("/user-profile");
     } catch (error) {
       console.error(error.message);
     }
   };
+  
   return (
     <article id="post-box" className="box-shadow">
       <h3 id="post-title">{title}</h3>
       <h4 id="post-content">{content}</h4>
       {props.user ? (
         <>
-          <input
-            id="comment"
+        <form onSubmit={handleOnSubmit}>
+        <input
+            id="post-comment"
             className="box-shadow"
             type="text"
             required
             value={comment}
+            onChange={(e) => setComment(e.target.value)}
             placeholder="comment here"
           />
-          <button className="box-shadow">Comment</button>
+          <button className="box-shadow hover-btn" type="submit">
+            Comment
+          </button>
+        </form>
+          <Link to={`/post/${props.post._id}`}>View comments</Link>
         </>
       ) : (
-        <></>
+        <>
+          <Link to={"/login"}>Login to view comments</Link>
+        </>
       )}
     </article>
   );
