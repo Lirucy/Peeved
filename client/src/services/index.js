@@ -148,7 +148,7 @@ export const getCommentById = async (id) => {
   }
 };
 
-export const newComment = async (newComment) => {
+export const newComment = async (comment) => {
   try {
     const token = localStorage.getItem("token");
     if (token) {

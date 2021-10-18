@@ -74,6 +74,9 @@
     color: black;
     text-align: center;
 }
+#peeve-submit-btn:hover {
+    background-color: #02af3b;
+}
 #new-title:focus{
     width: 80%;
 }

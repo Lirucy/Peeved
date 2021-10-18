@@ -22,6 +22,10 @@ a:hover{
     transition: all 0.3s ease 0s;
 }
 
+.hello:hover {
+    color: #0088a9;
+}
+
 @media screen and (max-width: 599px) {
     nav {
         display: flex;
