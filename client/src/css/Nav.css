@@ -21,15 +21,18 @@ a:hover{
     color: white;
     transition: all 0.3s ease 0s;
 }
+
 .hello:hover {
     color: #0088a9;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 599px) {
     nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    height: 45px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        height: unset;
+        font-size: unset;
+        padding: 15px;
     }
 }

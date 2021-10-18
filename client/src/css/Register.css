@@ -60,23 +60,27 @@
 
 
 
-@media only screen and (max-width: 600px){
+@media (max-width: 599px){
     #reg-body{
         background: linear-gradient(red, yellow);
-        width: auto;
-        height: 108vh;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     .reg-form-box{
+        position: static;
+        margin: 0;
         background-color: rgba(0, 0, 0, 0.8);
-        
-        width: 100vw;
-        padding: 45px;
+        width: 70%;
+        padding: 2rem;
         display: flex;
         flex-direction: column;
-        top: 50%;
-        left: 50%;
         text-align: center;
         align-items: center;
+        transform: translateY(-20%);
+
     }
     .register-text{
         color: white;
@@ -85,50 +89,17 @@
     }
   
     #reg-username:focus, #reg-password:focus, #reg-email:focus {
-        width: auto;
+        width: 90%;
     }
     
     #reg-btn{
         background-color: #fffecb;
+        border: 2px solid red;
     }
 
+    #reg-username, #reg-password, #reg-email {
+        width: 80%;
+        border: 2px solid red;
+    }
 }
 
-
-@media (max-width: 376px){
-    #reg-body{
-        background: linear-gradient(red, yellow);
-        width: auto;
-        height: 108vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .reg-form-box{
-        position: static;
-        background-color: rgba(0, 0, 0, 0.8);
-        width: 90vw;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        margin: 0;
-        margin-top: -50%;
-        text-align: center;
-        justify-content: center;
-        align-items: center;
-    }
-    .register-text{
-        color: white;
-        font-size: 30px;
-        
-    }
-  
-    #reg-username:focus, #reg-password:focus, #reg-email:focus {
-        width: auto;
-    }
-    
-    #reg-btn{
-        background-color:#fffecb;
-    }
-
-}
