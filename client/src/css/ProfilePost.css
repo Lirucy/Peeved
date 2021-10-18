@@ -1,14 +1,39 @@
 #user-post-box{
     margin: 10px;
+    width: 300px;
+    height: auto;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: center;
     border-radius: 15px;
+    background-color: rgb(66, 66, 66);
+    border: 1px solid #fffecb;
+    align-items: center;
+    padding-bottom: 25px;
 }
 
 #users-post{
     background-color: brown;
     margin-top: 5px;
     border-radius: 15px;
+    text-align: center;
+    
+}
 
+#edit-sumbit-btn{
+	box-shadow: 0px 1px 0px 0px #3dc21b;
+	background:linear-gradient(to bottom, #00a12b 5%, #5cbf2a 100%);
+	background-color:#00a12b;
+	border-radius:6px;
+	border:1px solid #18ab29;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
 }

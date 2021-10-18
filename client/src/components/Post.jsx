@@ -1,12 +1,11 @@
 import { useState, useEffect } from "react";
-import { useParams, useHistory } from "react-router-dom";
+import { useParams, useHistory, Link } from "react-router-dom";
 import {
   getCommentById,
   getPostById,
   getAllComments,
   getAllPosts,
 } from "../services";
-import '../css/Post.css'
 
 const Post = (props) => {
   const { title, content } = props.post;
@@ -39,20 +38,24 @@ const Post = (props) => {
       <h3 id="post-title">{title}</h3>
       <h4 id="post-content">{content}</h4>
       {props.user ? (
+      
         <>
           <input
-            id="comment"
-            className="box-shadow"
+            id="post-comment"
             type="text"
             required
             value={comment}
+            onChange={(e) => setComment(e.target.value)}
             placeholder="comment here"
           />
-          <button className="box-shadow">Comment</button>
+          <button id="add-comment-btn" type="submit" onClick={handleOnSubmit}>
+            Comment
+          </button>
         </>
       ) : (
         <></>
       )}
+      <Link to={`/post/${props.post._id}`}>View comments</Link>
     </article>
   );
 };
