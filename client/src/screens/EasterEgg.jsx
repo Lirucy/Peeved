@@ -14,7 +14,9 @@ const easterEgg = () => {
 aggravation, aggro [British], annoyance, bother, botheration, bugbear, exasperation, frustration, hair shirt, hassle, headache, inconvenience, irk, irritant, nuisance, pest, rub, ruffle, thorn, trial, vexation, discomfort, fleabite, pinprick, affront, insult, offense (or offence)
 upset, worry, affliction, albatross, burden, cross, curse, menace, millstone, plague, sore
 anxiety, plight, predicament, tribulation, trouble...</p>
-<h4>In other words, it's super-ultra-douchous ("soo-per-ŭl-trǔ-doo-shǔs")...</h4>
+<h4>In other words... 
+  {/* it's super-ultra-douchous ("soo-per-ŭl-trǔ-doo-shǔs")... */}
+  </h4>
 <img id="peeve-pic" src="https://iili.io/5BKRVf.png" alt="Peeved" />
 <h2>DON'T DO IT!!!</h2>
     </main>
