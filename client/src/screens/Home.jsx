@@ -11,7 +11,7 @@ const Home = ({ user }) => {
   }, []);
   return (
     <section className="home">
-      <h3 id="top-peeve-title">Check out our Top Pet Peeves!</h3>
+      <h1 className="page-title" id="top-peeve-title">Check out our Top Pet Peeves!</h1>
       <Link to="/easter-egg" ><img id="peeve-pic" src="https://iili.io/5BKRVf.png" alt="Peeved" /></Link>
       <div className="all-posts">
         {posts.map((post) => (

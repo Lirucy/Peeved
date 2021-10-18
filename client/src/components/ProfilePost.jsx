@@ -9,7 +9,7 @@ const ProfilePost = (props) => {
             <h3 id="post-title">{title}</h3>
             <h4 id="post-content">{content}</h4>
             <Link to={`/edit-post/${props.post._id}`}> 
-                <button type='submit' className="box-shadow">Edit Peeve</button>
+                <button id="edit-sumbit-btn" type='submit' className="box-shadow">Edit Peeve</button>
             </Link>
     </article>
     );

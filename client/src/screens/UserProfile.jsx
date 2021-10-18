@@ -19,7 +19,7 @@ const UserProfile = (props) => {
   return (
     <section id="user-profile-body">
       <div className="user-profile-posts">
-        <h3>My Pet Peeves!</h3>
+        <h1 className="page-title" id="my-peeves-h3">My Pet Peeves!</h1>
         <div>
           {filteredPosts.map((post) => (
             <ProfilePost key={post._id} post={post} />

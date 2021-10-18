@@ -1,7 +1,7 @@
 const easterEgg = () => {
   return (
-    <main>
-      <h1>Pet Peeve</h1>
+    <main className="easter-page">
+      <h1 className="page-title">Pet Peeve</h1>
       <h2>Defenition:</h2>
       <h3>Pet Peeve ("pĕt-pēēv")</h3>
       <h4>Noun - INFORMAL</h4>
