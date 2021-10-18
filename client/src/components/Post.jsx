@@ -40,7 +40,7 @@ const Post = (props) => {
       <h4 id="post-content">{content}</h4>
       {props.user ? (
         <>
-        <form onSubmit={handleOnSubmit}>
+        {/* <form onSubmit={handleOnSubmit}>
         <input
             id="post-comment"
             className="box-shadow"
@@ -53,7 +53,7 @@ const Post = (props) => {
           <button className="box-shadow hover-btn" type="submit">
             Comment
           </button>
-        </form>
+        </form> */}
           <Link to={`/post/${props.post._id}`}>View comments</Link>
         </>
       ) : (
