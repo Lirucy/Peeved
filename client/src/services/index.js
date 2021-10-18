@@ -148,14 +148,14 @@ export const getCommentById = async (id) => {
   }
 };
 
-export const newComment = async (comment) => {
+export const newComment = async (commentInfo) => {
   try {
     const token = localStorage.getItem("token");
     if (token) {
       const config = buildHeaders(token);
       const response = await axios.post(
         `${apiURL}/api/comments/new-comment`,
-        newComment,
+        commentInfo,
         config
       );
       return response.data;

@@ -10,13 +10,9 @@ body{
   margin: 0px;
   padding: 0px;
   max-width: 100vw;
-  background-color: rgb(199, 199, 199);
 }
 
 .box-shadow {
   box-shadow: 3px 3px 10px #272f49;
 }
 
-h1{
-  font-size: 40px;
-}

@@ -21,7 +21,8 @@ const getCommentById = async (req, res) => {
 
 const newComment = async (req, res) => {
     try {
-        const comment = new Comment({...req.body, userId:res.locals.user._id, postId:res.locals.post._id});
+        const comment = new Comment({...req.body, userId:res.locals.user._id});
+        // const comment = new Comment({comment: req.body.comment, userId:req.body.userId, postId:req.body.postId});
 
         await comment.save();
         res.status(201).json(comment);

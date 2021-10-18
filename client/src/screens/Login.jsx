@@ -10,7 +10,7 @@ const Login = (props) => {
   const handelSubmit = async (e) => {
     try {
       e.preventDefault();
-      const userInfo = {
+      const userInfo = { 
         username,
         password,
       };
