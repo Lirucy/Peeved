@@ -11,7 +11,7 @@ const NewPost = () => {
     try {
       e.preventDefault();
 
-      const post = {
+      const post = { 
         title,
         content,
       };
