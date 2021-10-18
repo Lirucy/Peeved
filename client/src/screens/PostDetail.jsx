@@ -5,8 +5,10 @@ import { getPostById, newComment } from "../services";
 const PostDetail = (props) => {
   const [post, setPost] = useState({});
   const [comment, setComment] = useState("");
+  // const [userId, setUserId] = useState({});
   const params = useParams();
   const postId = params.id;
+  // const userId = props.user.id;
   const history = useHistory();
 
   useEffect(() => {
@@ -23,14 +25,12 @@ const PostDetail = (props) => {
   const handleOnSubmit = async (e) => {
     try {
       e.preventDefault();
-      // const userId = props.user._id
-      // const postId = props.post._id
-      const comment = {
+      const commentInfo = {
         comment,
-        // userId,
-        // postId
+        postId,
+        // userId
       };
-      await newComment(comment);
+      await newComment(commentInfo);
       history.push("/user-profile");
     } catch (error) {
       console.error(error.message);
