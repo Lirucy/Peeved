@@ -59,49 +59,41 @@
     background-color:  lightseagreen;
 } 
 
-@media only screen and (max-width: 600px){
+@media (max-width: 599px){
     .login-body{
         background: linear-gradient(red, yellow);
-        width: auto;
-        height: 97vh;
-    }
-    .log-form-box{
-        background-color: rgba(0, 0, 0, 0.8);
-        width: 87vw;
-        padding: 70px;
+        width: 100%;
+        height: 100vh;
         display: flex;
-        flex-direction: column;
-        text-align: center;
-        align-items: center;
-    }
-    #btn{
-        background-color: #fffecb;
-    }
-
-}
-
-@media only screen and (max-width: 376px){
-    .login-body{
-        background: linear-gradient(red, yellow);
-        width: auto;
-        height: 97vh;
-    }
-    .log-form-box{
-        position: static;
-        background-color: rgba(0, 0, 0, 0.8);
-        width: 90vw;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        margin: 0;
-        margin-top: 50%;
-        margin-left: 3%;
-        text-align: center;
         justify-content: center;
         align-items: center;
     }
+
+    .log-form-box{
+        position: static;
+        margin: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+        width: 70%;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        transform: translateY(-20%);
+       
+    }
+    #username, #password {
+        width: 80%;
+        border: 2px solid red;
+    }
+
+    #username:focus, #password:focus {
+        width: 90%;
+    }
+
     #btn{
         background-color: #fffecb;
+        border: 2px solid red;
     }
 
 }
