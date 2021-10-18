@@ -17,7 +17,7 @@ const Nav = ({ user, setUser }) => {
           <Link to="/">Home</Link>
           <Link to="/new-post">New Peeve</Link>
           <Link id="user" to="/user-profile">
-            <span className= 'hello'>Hi, {user.username}!</span>{" "}
+            <span className='hello'>Hi, {user.username}!</span>{" "}
           </Link>
           <Link to="/login" onClick={logOut}>
             Log Out

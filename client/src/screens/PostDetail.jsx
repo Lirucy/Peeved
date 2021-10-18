@@ -23,8 +23,12 @@ const PostDetail = (props) => {
   const handleOnSubmit = async (e) => {
     try {
       e.preventDefault();
+      // const userId = props.user._id
+      // const postId = props.post._id
       const comment = {
         comment,
+        // userId,
+        // postId
       };
       await newComment(comment);
       history.push("/user-profile");
